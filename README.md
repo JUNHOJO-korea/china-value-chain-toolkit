@@ -45,36 +45,53 @@ CBEC 경로 의사결정 · Vendor/QA/OTD 로드맵 · 중국 라벨/표준(GB/C
 
 ```mermaid
 flowchart LR
-A([Start: 상품·수요 입력]); B{ASP >= $60?}; C{체적중량 >= 1kg?}; D{반품률 >= 15%?};
-E[보세 점수 +1]; F[직구 점수 +1]; G{유통기한 >= 90일?}; H[보세 점수 +1]; I[직구 점수 +1];
-J{시즌성 High?}; K[보세 점수 +1]; L[직구 점수 +1]; M{규제/인증 필요? (NMPA/CCC 등)};
-N[보세 점수 +1]; O[직구 점수 +1]; P{CV <= 0.4?}; Q([추천: 보세 备货]); R([추천: 직구 直邮]);
+A([Start: Input product and demand]); 
+B{ASP >= 60 USD}; 
+C{Volumetric weight >= 1 kg}; 
+D{Return rate >= 15 pct}; 
+E[Bonded score +1]; 
+F[Direct score +1]; 
+G{Shelf life >= 90 days}; 
+H[Bonded score +1]; 
+I[Direct score +1]; 
+J{Seasonality high}; 
+K[Bonded score +1]; 
+L[Direct score +1]; 
+M{Regulatory or certification needed}; 
+N[Bonded score +1]; 
+O[Direct score +1]; 
+P{Demand CV <= 0.4}; 
+Q([Recommend Bonded]); 
+R([Recommend Direct]);
 
 A --> B; 
-B -- 예 --> C; 
-B -- 아니오 --> D;
+B -- yes --> C; 
+B -- no  --> D;
 
-C -- 예 --> E; 
-C -- 아니오 --> F; 
-D -- 예 --> E; 
-D -- 아니오 --> F;
+C -- yes --> E; 
+C -- no  --> F; 
+D -- yes --> E; 
+D -- no  --> F;
 
 E --> G; 
 F --> G; 
-G -- 예 --> H; 
-G -- 아니오 --> I;
+G -- yes --> H; 
+G -- no  --> I;
 
 H --> J; 
 I --> J; 
-J -- 예 --> K; 
-J -- 아니오 --> L;
+J -- yes --> K; 
+J -- no  --> L;
 
 K --> M; 
 L --> M; 
-M -- 예 --> N; 
-M -- 아니오 --> O;
+M -- yes --> N; 
+M -- no  --> O;
 
 N --> P; 
 O --> P; 
-P -- 예 --> Q; 
-P -- 아니오 --> R;
+P -- yes --> Q; 
+P -- no  --> R;
+
+P -- yes --> Q
+P -- no  --> R
