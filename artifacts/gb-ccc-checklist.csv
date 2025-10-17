@@ -1,0 +1,6 @@
+Category,GB_or_GB_T,CCC_required,Label_fields,Docs_required,Notes
+Apparel,GB/T 29862,No,"Fiber content, Size, Care symbols, Manufacturer, Safety",CO/CI/PL; Test,"Children items Safety A"
+Footwear,GB 25036,No,"Materials, Size, Manufacturer",CO/CI/PL; Test,""
+Cosmetics,GB 5296.3,No,"Ingredients(INCI/CN), Net content, Manufacturer, Shelf life, Batch, Usage, Warnings",MSDS; Hygiene,"Special cosmetics need NMPA filing"
+Electrical,GB 4706.x,Yes,"Voltage, Power, Manufacturer, Safety marks",CCC cert; Test,"Plug spec GB 1002/2099"
+Food,GB 7718,No,"Ingredients, Allergens, Net content, Production date, Shelf life, Storage",CIQ; Health,""
